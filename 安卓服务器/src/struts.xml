@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+     <constant name="struts.i18n.encoding" value="gbk"/>
+     <constant name="struts.devMode" value="true" />
+     <!--Struts2中Action对象的创建交给spring完成-->
+     <constant name="struts.objectFactory" value="spring" />   
+       
+          
+	 <package name="login" namespace="/login" extends="struts-default">
+	        <action name="login_*" class="loginAction" method="{1}">
+	        	<result name="main_view">/main.jsp</result>
+	        	<result name="error">/error.jsp</result>
+	        	<result name="input">/login.jsp</result> 
+	        	<result name="login_view">/login.jsp</result>
+	          
+	        </action>  
+	 </package>
+	 
+         <!-- UserInfoAction配置 -->
+         <package name="UserInfo" namespace="/UserInfo" extends="struts-default">
+           <action name="UserInfo_*" class="userInfoAction" method="{1}">
+             <result name="add_view">/UserInfo_add.jsp</result>
+             <result name="input">/UserInfo_add.jsp</result>
+             <result name="add_success">/message.jsp</result>
+             <result name="delete_success">/message.jsp</result>
+             <result name="modify_success">/message.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="query_view">/UserInfo_query_result.jsp</result>
+             <result name="front_query_view">/UserInfo_frontquery_result.jsp</result>
+             <result name="front_show_view">/UserInfo_frontshow.jsp</result>
+             <result name="modify_view">/UserInfo_modify.jsp</result>
+           </action>
+         </package>
+
+         <!-- SellerAction配置 -->
+         <package name="Seller" namespace="/Seller" extends="struts-default">
+           <action name="Seller_*" class="sellerAction" method="{1}">
+             <result name="add_view">/Seller_add.jsp</result>
+             <result name="input">/Seller_add.jsp</result>
+             <result name="add_success">/message.jsp</result>
+             <result name="delete_success">/message.jsp</result>
+             <result name="modify_success">/message.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="query_view">/Seller_query_result.jsp</result>
+             <result name="front_query_view">/Seller_frontquery_result.jsp</result>
+             <result name="front_show_view">/Seller_frontshow.jsp</result>
+             <result name="modify_view">/Seller_modify.jsp</result>
+           </action>
+         </package>
+
+         <!-- ProductClassAction配置 -->
+         <package name="ProductClass" namespace="/ProductClass" extends="struts-default">
+           <action name="ProductClass_*" class="productClassAction" method="{1}">
+             <result name="add_view">/ProductClass_add.jsp</result>
+             <result name="input">/ProductClass_add.jsp</result>
+             <result name="add_success">/message.jsp</result>
+             <result name="delete_success">/message.jsp</result>
+             <result name="modify_success">/message.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="query_view">/ProductClass_query_result.jsp</result>
+             <result name="front_query_view">/ProductClass_frontquery_result.jsp</result>
+             <result name="front_show_view">/ProductClass_frontshow.jsp</result>
+             <result name="modify_view">/ProductClass_modify.jsp</result>
+           </action>
+         </package>
+
+         <!-- ProductAction配置 -->
+         <package name="Product" namespace="/Product" extends="struts-default">
+           <action name="Product_*" class="productAction" method="{1}">
+             <result name="add_view">/Product_add.jsp</result>
+             <result name="input">/Product_add.jsp</result>
+             <result name="add_success">/message.jsp</result>
+             <result name="delete_success">/message.jsp</result>
+             <result name="modify_success">/message.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="query_view">/Product_query_result.jsp</result>
+             <result name="front_query_view">/Product_frontquery_result.jsp</result>
+             <result name="front_show_view">/Product_frontshow.jsp</result>
+             <result name="modify_view">/Product_modify.jsp</result>
+           </action>
+         </package>
+
+         <!-- ShopCartAction配置 -->
+         <package name="ShopCart" namespace="/ShopCart" extends="struts-default">
+           <action name="ShopCart_*" class="shopCartAction" method="{1}">
+             <result name="add_view">/ShopCart_add.jsp</result>
+             <result name="input">/ShopCart_add.jsp</result>
+             <result name="add_success">/message.jsp</result>
+             <result name="delete_success">/message.jsp</result>
+             <result name="modify_success">/message.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="query_view">/ShopCart_query_result.jsp</result>
+             <result name="front_query_view">/ShopCart_frontquery_result.jsp</result>
+             <result name="front_show_view">/ShopCart_frontshow.jsp</result>
+             <result name="modify_view">/ShopCart_modify.jsp</result>
+           </action>
+         </package>
+
+         <!-- OrderInfoAction配置 -->
+         <package name="OrderInfo" namespace="/OrderInfo" extends="struts-default">
+           <action name="OrderInfo_*" class="orderInfoAction" method="{1}">
+             <result name="add_view">/OrderInfo_add.jsp</result>
+             <result name="input">/OrderInfo_add.jsp</result>
+             <result name="add_success">/message.jsp</result>
+             <result name="delete_success">/message.jsp</result>
+             <result name="modify_success">/message.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="query_view">/OrderInfo_query_result.jsp</result>
+             <result name="front_query_view">/OrderInfo_frontquery_result.jsp</result>
+             <result name="front_show_view">/OrderInfo_frontshow.jsp</result>
+             <result name="modify_view">/OrderInfo_modify.jsp</result>
+           </action>
+         </package>
+
+         <!-- OrderItemAction配置 -->
+         <package name="OrderItem" namespace="/OrderItem" extends="struts-default">
+           <action name="OrderItem_*" class="orderItemAction" method="{1}">
+             <result name="add_view">/OrderItem_add.jsp</result>
+             <result name="input">/OrderItem_add.jsp</result>
+             <result name="add_success">/message.jsp</result>
+             <result name="delete_success">/message.jsp</result>
+             <result name="modify_success">/message.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="query_view">/OrderItem_query_result.jsp</result>
+             <result name="front_query_view">/OrderItem_frontquery_result.jsp</result>
+             <result name="front_show_view">/OrderItem_frontshow.jsp</result>
+             <result name="modify_view">/OrderItem_modify.jsp</result>
+           </action>
+         </package>
+
+         <!-- PayWayAction配置 -->
+         <package name="PayWay" namespace="/PayWay" extends="struts-default">
+           <action name="PayWay_*" class="payWayAction" method="{1}">
+             <result name="add_view">/PayWay_add.jsp</result>
+             <result name="input">/PayWay_add.jsp</result>
+             <result name="add_success">/message.jsp</result>
+             <result name="delete_success">/message.jsp</result>
+             <result name="modify_success">/message.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="query_view">/PayWay_query_result.jsp</result>
+             <result name="front_query_view">/PayWay_frontquery_result.jsp</result>
+             <result name="front_show_view">/PayWay_frontshow.jsp</result>
+             <result name="modify_view">/PayWay_modify.jsp</result>
+           </action>
+         </package>
+
+         <!-- SendWayAction配置 -->
+         <package name="SendWay" namespace="/SendWay" extends="struts-default">
+           <action name="SendWay_*" class="sendWayAction" method="{1}">
+             <result name="add_view">/SendWay_add.jsp</result>
+             <result name="input">/SendWay_add.jsp</result>
+             <result name="add_success">/message.jsp</result>
+             <result name="delete_success">/message.jsp</result>
+             <result name="modify_success">/message.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="query_view">/SendWay_query_result.jsp</result>
+             <result name="front_query_view">/SendWay_frontquery_result.jsp</result>
+             <result name="front_show_view">/SendWay_frontshow.jsp</result>
+             <result name="modify_view">/SendWay_modify.jsp</result>
+           </action>
+         </package>
+
+         <!-- CollectionAction配置 -->
+         <package name="Collection" namespace="/Collection" extends="struts-default">
+           <action name="Collection_*" class="collectionAction" method="{1}">
+             <result name="add_view">/Collection_add.jsp</result>
+             <result name="input">/Collection_add.jsp</result>
+             <result name="add_success">/message.jsp</result>
+             <result name="delete_success">/message.jsp</result>
+             <result name="modify_success">/message.jsp</result>
+             <result name="error">/error.jsp</result>
+             <result name="query_view">/Collection_query_result.jsp</result>
+             <result name="front_query_view">/Collection_frontquery_result.jsp</result>
+             <result name="front_show_view">/Collection_frontshow.jsp</result>
+             <result name="modify_view">/Collection_modify.jsp</result>
+           </action>
+         </package>
+
+
+	 
+	 
+
+ 	 <package name="password" namespace="/password" extends="struts-default">
+	        <action name="ChangePassword" class="changePasswordAction">  
+	        	<result name="change_success">/message.jsp</result>
+	        	<result name="error">/error.jsp</result> 
+	        </action>  
+	 </package> 
+	  
+	 <package name="User" namespace="/User" extends="struts-default">
+	        <action name="User_*" class="com.chengxusheji.action.UserAction" method="{1}">  
+	        	<result name="user_query_view">/user_query_result.jsp</result>
+	        	<result name="success">/message.jsp</result>
+	        	<result name="error">/error.jsp</result> 
+	        </action>  
+	 </package>  
+	 
+</struts>

@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chengxusheji.domain">
+
+	<class name="ShopCart" table="ShopCart">
+
+          <!-- 主键购物车id -->
+          <id name="cartId" column="cartId">
+            <generator class="native"/>
+          </id>
+
+          <!-- 多对一属性: 商品 -->
+          <many-to-one name="productObj"
+            column="productObj"
+            class="Product"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 多对一属性: 用户 -->
+          <many-to-one name="userObj"
+            column="userObj"
+            class="UserInfo"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 简单浮点型属性: 单价 -->
+          <property
+            name="price"
+            column="price"
+            type="float"
+          />
+
+          <!-- 简单整型属性: 购买数量 -->
+          <property
+            name="buyNum"
+            column="buyNum"
+            type="int"
+
+          />
+
+
+		 
+		
+	</class>
+	
+</hibernate-mapping>
+ 

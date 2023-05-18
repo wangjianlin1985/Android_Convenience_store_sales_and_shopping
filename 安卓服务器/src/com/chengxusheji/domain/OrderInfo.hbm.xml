@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chengxusheji.domain">
+
+	<class name="OrderInfo" table="OrderInfo">
+
+          <!-- 主键订单编号 -->
+          <id name="orderNo" type="string" length="20">
+            <generator class="assigned"/>
+          </id>
+
+          <!-- 多对一属性: 下单用户 -->
+          <many-to-one name="userObj"
+            column="userObj"
+            class="UserInfo"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 简单浮点型属性: 订单总金额 -->
+          <property
+            name="totalMoney"
+            column="totalMoney"
+            type="float"
+          />
+
+          <!-- 多对一属性: 支付方式 -->
+          <many-to-one name="payWay"
+            column="payWay"
+            class="PayWay"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 简单字符串属性: 订单状态 -->
+          <property
+            name="orderStateObj"
+            column="orderStateObj"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单字符串属性: 下单时间 -->
+          <property
+            name="orderTime"
+            column="orderTime"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单字符串属性: 收货人 -->
+          <property
+            name="receiveName"
+            column="receiveName"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单字符串属性: 收货人电话 -->
+          <property
+            name="telephone"
+            column="telephone"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单字符串属性: 收货人地址 -->
+          <property
+            name="address"
+            column="address"
+            type="string"
+            length="80"
+          />
+
+          <!-- 多对一属性: 送货方式 -->
+          <many-to-one name="sendWayObj"
+            column="sendWayObj"
+            class="SendWay"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 简单字符串属性: 订单备注 -->
+          <property
+            name="orderMemo"
+            column="orderMemo"
+            type="string"
+            length="500"
+          />
+
+          <!-- 多对一属性: 订单卖家 -->
+          <many-to-one name="sellerObj"
+            column="sellerObj"
+            class="Seller"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+
+		 
+		
+	</class>
+	
+</hibernate-mapping>
+ 

@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chengxusheji.domain">
+
+	<class name="OrderItem" table="OrderItem">
+
+          <!-- 主键条目id -->
+          <id name="itemId" column="itemId">
+            <generator class="native"/>
+          </id>
+
+          <!-- 多对一属性: 所属订单 -->
+          <many-to-one name="orderObj"
+            column="orderObj"
+            class="OrderInfo"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 多对一属性: 订单商品 -->
+          <many-to-one name="productObj"
+            column="productObj"
+            class="Product"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 简单浮点型属性: 商品单价 -->
+          <property
+            name="price"
+            column="price"
+            type="float"
+          />
+
+          <!-- 简单整型属性: 购买数量 -->
+          <property
+            name="orderNumer"
+            column="orderNumer"
+            type="int"
+
+          />
+
+
+		 
+		
+	</class>
+	
+</hibernate-mapping>
+ 

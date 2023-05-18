@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chengxusheji.domain">
+
+	<class name="Product" table="Product">
+
+          <!-- 主键商品id -->
+          <id name="productId" column="productId">
+            <generator class="native"/>
+          </id>
+
+          <!-- 多对一属性: 商品类别 -->
+          <many-to-one name="productClassObj"
+            column="productClassObj"
+            class="ProductClass"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 简单字符串属性: 商品名称 -->
+          <property
+            name="productName"
+            column="productName"
+            type="string"
+            length="50"
+          />
+
+          <!-- 简单图片属性: 商品主图 -->
+          <property
+            name="mainPhoto"
+            column="mainPhoto"
+            type="string"
+            length="50"
+          />
+
+          <!-- 简单浮点型属性: 商品价格 -->
+          <property
+            name="price"
+            column="price"
+            type="float"
+          />
+
+          <!-- 简单字符串属性: 商品描述 -->
+          <property
+            name="productDesc"
+            column="productDesc"
+            type="string"
+            length="5000"
+          />
+
+          <!-- 多对一属性: 发布商家 -->
+          <many-to-one name="sellerObj"
+            column="sellerObj"
+            class="Seller"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 简单字符串属性: 发布时间 -->
+          <property
+            name="addTime"
+            column="addTime"
+            type="string"
+            length="30"
+          />
+
+
+		 
+		
+	</class>
+	
+</hibernate-mapping>
+ 

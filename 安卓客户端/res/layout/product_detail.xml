@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#F5F5F5"
+    android:orientation="vertical" >
+<include layout="@layout/title" />
+<ScrollView
+ android:layout_width="fill_parent" 
+ android:layout_height="fill_parent">
+<LinearLayout 
+	android:orientation="vertical" 
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	 android:background="@android:color/white">
+	<TableLayout
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent" 
+		android:stretchColumns="1">
+	    <TableRow> 
+			<TextView 
+				android:text="商品id：" 
+				android:id="@+id/TextView"
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:textColor="#0000ff" 
+			/>
+			<TextView
+				android:text="" 
+				android:id="@+id/TV_productId" 
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+			/>
+		</TableRow>
+	    <TableRow>
+			<TextView
+				android:text="商品类别：" 
+				android:id="@+id/TV_productClassObj_Label"
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:textColor="#0000ff"
+			/>
+			<TextView
+				android:text="" 
+				android:id="@+id/TV_productClassObj" 
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+			/>
+		</TableRow>
+	    <TableRow>
+			<TextView
+				android:text="商品名称：" 
+				android:id="@+id/TV_productName_Label"
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:textColor="#0000ff"
+			/>
+			<TextView
+				android:text="" 
+				android:id="@+id/TV_productName" 
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+			/>
+		</TableRow>
+	    <TableRow>
+			<TextView
+				android:text="商品主图：" 
+				android:id="@+id/TV_mainPhoto_Label"
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:textColor="#0000ff"
+			/>
+		  <ImageView android:id="@+id/iv_mainPhoto" 
+        	android:layout_width="250dp"  
+        	android:layout_height="250dp"  
+        	android:src="@drawable/noimage" 
+        	/>  
+		</TableRow>
+	    <TableRow>
+			<TextView
+				android:text="商品价格：" 
+				android:id="@+id/TV_price_Label"
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:textColor="#0000ff"
+			/>
+			<TextView
+				android:text="" 
+				android:id="@+id/TV_price" 
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+			/>
+		</TableRow>
+	    <TableRow>
+			<TextView
+				android:text="商品描述：" 
+				android:id="@+id/TV_productDesc_Label"
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:textColor="#0000ff"
+			/>
+			<TextView
+				android:text="" 
+				android:id="@+id/TV_productDesc" 
+				android:layout_width="60dp"
+				android:layout_height="wrap_content"
+				android:inputType="textMultiLine"
+				android:singleLine="false"
+				android:scrollHorizontally="false"
+			/>
+		</TableRow>
+	    <TableRow>
+			<TextView
+				android:text="发布商家：" 
+				android:id="@+id/TV_sellerObj_Label"
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:textColor="#0000ff"
+			/>
+			<TextView
+				android:text="" 
+				android:id="@+id/TV_sellerObj" 
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+			/>
+		</TableRow>
+	    <TableRow>
+			<TextView
+				android:text="发布时间：" 
+				android:id="@+id/TV_addTime_Label"
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:textColor="#0000ff"
+			/>
+			<TextView
+				android:text="" 
+				android:id="@+id/TV_addTime" 
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+			/>
+		</TableRow>
+	</TableLayout>
+	<LinearLayout 
+		android:orientation="vertical" 
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center">
+	     
+		   <Button 
+				android:text="加入购物车" 
+				android:id="@+id/btnAddCart"
+ 				android:layout_width="match_parent"
+				android:layout_height="48dp"
+				android:layout_marginLeft="5dip"
+				android:layout_marginRight="5dip"
+				android:layout_marginTop="5dip"
+				android:background="#D64F4D"
+				android:textColor="@color/white" /> 
+				
+		  
+		   <Button 
+				android:text="收藏此商品" 
+				android:id="@+id/btnCollect"
+ 				android:layout_width="match_parent"
+				android:layout_height="48dp"
+				android:layout_marginLeft="5dip"
+				android:layout_marginRight="5dip"
+				android:layout_marginTop="5dip"
+				android:background="#D64F4D"
+				android:textColor="@color/white" /> 
+				
+		   
+		   <Button
+		       android:text="返回"
+		       android:id="@+id/btnReturn"
+		       android:layout_width="match_parent"
+		       android:layout_height="48dp"
+		       android:layout_marginLeft="10dip"
+		       android:layout_marginRight="10dip"
+		       android:layout_marginTop="20dip"
+		       android:background="#1ab394"
+		       android:textColor="@color/white" />
+	</LinearLayout>
+  </LinearLayout>
+</ScrollView>
+</LinearLayout>
+
+
